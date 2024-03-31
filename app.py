@@ -1,5 +1,12 @@
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)\
 
 client = MongoClient('mongodb+srv://Wahyu:freedom123@cluster0.4slz1dd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 db = client.dbWahyu
